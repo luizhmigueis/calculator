@@ -3,6 +3,8 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Calculations;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -11,9 +13,9 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		int choose = 1;
-		
-		do {
-			System.out.println("***THE BEST CALCULATOR YOU EVER SEEN***");
+		System.out.println("***THE BEST CALCULATOR YOU EVER SEEN***");
+				
+		do {			
 			System.out.println("");
 			System.out.println("Choose the option below that you want to perform the calculation for:");
 			System.out.println("");
@@ -39,8 +41,9 @@ public class Program {
 					double firstNumber = sc.nextDouble();
 					System.out.print("Enter the second number: ");
 					double secondNumber = sc.nextDouble();
+					Calculations cal = new Calculations(firstNumber, secondNumber);					
 					sc.nextLine();
-					System.out.println("Result: " + (firstNumber + secondNumber));
+					System.out.println("Result: " + cal.addition(firstNumber, secondNumber));
 					System.out.println("");					
 					break;
 					
@@ -49,8 +52,9 @@ public class Program {
 					firstNumber = sc.nextDouble();
 					System.out.print("Enter the second number: ");
 					secondNumber = sc.nextDouble();
+					cal = new Calculations(firstNumber, secondNumber);
 					sc.nextLine();
-					System.out.println("Result: " + (firstNumber - secondNumber));
+					System.out.println("Result: " + cal.subtration(firstNumber, secondNumber));
 					System.out.println("");
 					
 					break;
@@ -61,7 +65,8 @@ public class Program {
 					System.out.print("Multiplied by: ");
 					secondNumber = sc.nextDouble();
 					sc.nextLine();
-					System.out.println("Result: " + (firstNumber * secondNumber));
+					cal = new Calculations(firstNumber, secondNumber);
+					System.out.println("Result: " + cal.multiplication(firstNumber, secondNumber));
 					System.out.println("");
 					break;
 					
@@ -71,16 +76,17 @@ public class Program {
 					System.out.print("Divided by: ");
 					secondNumber = sc.nextDouble();
 					sc.nextLine();
-					System.out.println("Result: " + (firstNumber * secondNumber));
+					cal = new Calculations(firstNumber, secondNumber);
+					System.out.println("Result: " + cal.division(firstNumber, secondNumber));
 					System.out.println("");
 					break;
 					
 				case 5: 
 					System.out.print("Enter the number you want the square root: ");
-					firstNumber = sc.nextDouble();
-					
+					firstNumber = sc.nextDouble();					
 					sc.nextLine();
-					System.out.println("Result: " + Math.sqrt(firstNumber));
+					cal = new Calculations(firstNumber, null);
+					System.out.println("Result: " + cal.squareRoot(firstNumber));
 					System.out.println("");
 					break;
 					
@@ -90,7 +96,8 @@ public class Program {
 					System.out.print("Enter the exponent: ");
 					secondNumber = sc.nextDouble();
 					sc.nextLine();
-					System.out.println("Result: " + Math.pow(firstNumber, secondNumber));
+					cal = new Calculations(firstNumber, secondNumber);
+					System.out.println("Result: " + cal.exponent(firstNumber, secondNumber));
 					System.out.println("");
 					break;
 					
@@ -100,7 +107,8 @@ public class Program {
 					System.out.print("Enter the percentage: ");
 					secondNumber = sc.nextDouble();
 					sc.nextLine();
-					System.out.println("Result: " + (firstNumber * secondNumber / 100));
+					cal = new Calculations(firstNumber, secondNumber);
+					System.out.println("Result: " + cal.percentage(firstNumber, secondNumber));
 					System.out.println("");
 					break;
 					
