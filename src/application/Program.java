@@ -37,6 +37,7 @@ public class Program {
 
 			switch (optionfirstNumber) {
 			case 1:
+				//Addition
 				System.out.print("Enter the first number: ");
 				double firstNumber = sc.nextDouble();
 				System.out.print("Enter the second number: ");
@@ -47,6 +48,7 @@ public class Program {
 				break;
 
 			case 2:
+				//Subtration
 				System.out.print("Enter the first number: ");
 				firstNumber = sc.nextDouble();
 				System.out.print("Enter the second number: ");
@@ -58,6 +60,7 @@ public class Program {
 				break;
 
 			case 3:
+				//Multiplication
 				System.out.print("Enter the first number: ");
 				firstNumber = sc.nextDouble();
 				System.out.print("Multiplied by: ");
@@ -68,6 +71,7 @@ public class Program {
 				break;
 
 			case 4:
+				//Division
 				System.out.print("Enter the first number: ");
 				firstNumber = sc.nextDouble();
 				System.out.print("Divided by: ");
@@ -78,6 +82,7 @@ public class Program {
 				break;
 
 			case 5:
+				//Square Root
 				System.out.print("Enter the number you want the square root: ");
 				firstNumber = sc.nextDouble();
 				sc.nextLine();
@@ -86,6 +91,7 @@ public class Program {
 				break;
 
 			case 6:
+				//Exponent
 				System.out.print("Enter the base number: ");
 				firstNumber = sc.nextDouble();
 				System.out.print("Enter the exponent: ");
@@ -96,6 +102,7 @@ public class Program {
 				break;
 
 			case 7:
+				//Percentage
 				System.out.print("Enter the base number: ");
 				firstNumber = sc.nextDouble();
 				System.out.print("Enter the percentage: ");
