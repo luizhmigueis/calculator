@@ -8,14 +8,14 @@ import entities.Calculations;
 public class Program {
 
 	public static void main(String[] args) {
-		
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		int choose = 1;
 		System.out.println("***THE BEST CALCULATOR YOU EVER SEEN***");
-				
-		do {			
+
+		do {
 			System.out.println("");
 			System.out.println("Choose the option below that you want to perform the calculation for:");
 			System.out.println("");
@@ -28,95 +28,88 @@ public class Program {
 			System.out.println("7) Percentage");
 			System.out.println("");
 			System.out.println("Choice:");
-			
+
 			int option = sc.nextInt();
-			
+
 			String optionString = String.valueOf(Math.abs(option));
 			int optionfirstNumber = Character.getNumericValue(optionString.charAt(0));
 			System.out.println("");
-			
+
 			switch (optionfirstNumber) {
-				case 1:
-					System.out.print("Enter the first number: ");
-					double firstNumber = sc.nextDouble();
-					System.out.print("Enter the second number: ");
-					double secondNumber = sc.nextDouble();
-					Calculations cal = new Calculations(firstNumber, secondNumber);					
-					sc.nextLine();
-					System.out.println("Result: " + cal.addition(firstNumber, secondNumber));
-					System.out.println("");					
-					break;
-					
-				case 2:
-					System.out.print("Enter the first number: ");
-					firstNumber = sc.nextDouble();
-					System.out.print("Enter the second number: ");
-					secondNumber = sc.nextDouble();
-					cal = new Calculations(firstNumber, secondNumber);
-					sc.nextLine();
-					System.out.println("Result: " + cal.subtration(firstNumber, secondNumber));
-					System.out.println("");
-					
-					break;
-					
-				case 3:
-					System.out.print("Enter the first number: ");
-					firstNumber = sc.nextDouble();
-					System.out.print("Multiplied by: ");
-					secondNumber = sc.nextDouble();
-					sc.nextLine();
-					cal = new Calculations(firstNumber, secondNumber);
-					System.out.println("Result: " + cal.multiplication(firstNumber, secondNumber));
-					System.out.println("");
-					break;
-					
-				case 4: 
-					System.out.print("Enter the first number: ");
-					firstNumber = sc.nextDouble();
-					System.out.print("Divided by: ");
-					secondNumber = sc.nextDouble();
-					sc.nextLine();
-					cal = new Calculations(firstNumber, secondNumber);
-					System.out.println("Result: " + cal.division(firstNumber, secondNumber));
-					System.out.println("");
-					break;
-					
-				case 5: 
-					System.out.print("Enter the number you want the square root: ");
-					firstNumber = sc.nextDouble();					
-					sc.nextLine();
-					cal = new Calculations(firstNumber, null);
-					System.out.println("Result: " + cal.squareRoot(firstNumber));
-					System.out.println("");
-					break;
-					
-				case 6: 
-					System.out.print("Enter the base number: ");
-					firstNumber = sc.nextDouble();
-					System.out.print("Enter the exponent: ");
-					secondNumber = sc.nextDouble();
-					sc.nextLine();
-					cal = new Calculations(firstNumber, secondNumber);
-					System.out.println("Result: " + cal.exponent(firstNumber, secondNumber));
-					System.out.println("");
-					break;
-					
-				case 7:
-					System.out.print("Enter the base number: ");
-					firstNumber = sc.nextDouble();
-					System.out.print("Enter the percentage: ");
-					secondNumber = sc.nextDouble();
-					sc.nextLine();
-					cal = new Calculations(firstNumber, secondNumber);
-					System.out.println("Result: " + cal.percentage(firstNumber, secondNumber));
-					System.out.println("");
-					break;
-					
-				}
+			case 1:
+				System.out.print("Enter the first number: ");
+				double firstNumber = sc.nextDouble();
+				System.out.print("Enter the second number: ");
+				double secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.addition(firstNumber, secondNumber));
+				System.out.println("");
+				break;
+
+			case 2:
+				System.out.print("Enter the first number: ");
+				firstNumber = sc.nextDouble();
+				System.out.print("Enter the second number: ");
+				secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.subtration(firstNumber, secondNumber));
+				System.out.println("");
+
+				break;
+
+			case 3:
+				System.out.print("Enter the first number: ");
+				firstNumber = sc.nextDouble();
+				System.out.print("Multiplied by: ");
+				secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.multiplication(firstNumber, secondNumber));
+				System.out.println("");
+				break;
+
+			case 4:
+				System.out.print("Enter the first number: ");
+				firstNumber = sc.nextDouble();
+				System.out.print("Divided by: ");
+				secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.division(firstNumber, secondNumber));
+				System.out.println("");
+				break;
+
+			case 5:
+				System.out.print("Enter the number you want the square root: ");
+				firstNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.squareRoot(firstNumber));
+				System.out.println("");
+				break;
+
+			case 6:
+				System.out.print("Enter the base number: ");
+				firstNumber = sc.nextDouble();
+				System.out.print("Enter the exponent: ");
+				secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.exponent(firstNumber, secondNumber));
+				System.out.println("");
+				break;
+
+			case 7:
+				System.out.print("Enter the base number: ");
+				firstNumber = sc.nextDouble();
+				System.out.print("Enter the percentage: ");
+				secondNumber = sc.nextDouble();
+				sc.nextLine();
+				System.out.println("Result: " + Calculations.percentage(firstNumber, secondNumber));
+				System.out.println("");
+				break;
+
+			}
 			System.out.print("Do you want to do more calculations? 1 for Yes or 0 for No?");
 			choose = sc.nextInt();
 		}
-			
+
 		while (choose == 1);
 		System.out.println("");
 		System.out.println("Thank you for using my calculator!");
@@ -124,5 +117,3 @@ public class Program {
 	}
 
 }
-
-
